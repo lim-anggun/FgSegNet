@@ -2,8 +2,9 @@
 
 This repository contains source codes and training set for the following paper:<br /><br />
 ***["Foreground Segmentation Using a Triplet Convolutional Neural Network for Multiscale Feature Encoding"](https://arxiv.org/abs/1801.02225)  by Long Ang LIM, Hacer YALIM KELES*** <br /><br />
-***Arxiv URL : https://arxiv.org/abs/1801.02225***
-
+***Arxiv URL : https://arxiv.org/abs/1801.02225*** <br/><br/>
+![alt tag](network.png "FgSegNet Network Architecture")
+<br/>
 ## Citation
 If you find FgSegNet useful in your research, please consider citing: <br />
 ```
@@ -36,7 +37,7 @@ Easy to train! Just a SINGLE click, gooo!!! <br />
           ```out_rows = math.floor(rows / float(downscale))```<br/>
           ```out_cols = math.floor(cols / float(downscale))```
 2. Download VGG16 weights from [HERE](https://github.com/fchollet/deep-learning-models/releases/download/v0.1/vgg16_weights_tf_dim_ordering_tf_kernels_notop.h5) and place it in appropriate directory (e.g. FgSegNet dir), or it will be downloaded and stored in /.keras/models/ automatically.
-3. Download our training frames from [HRER](FgSegNet_dataset) and [CDnet2014 dataset](http://changedetection.net), then place them into corresponding directory.<br/>
+3. Download our training frames from [HRER](/FgSegNet_dataset2014) and [CDnet2014 dataset](http://changedetection.net), then place them into corresponding directory.<br/>
   
     Example:
 
@@ -57,7 +58,7 @@ Easy to train! Just a SINGLE click, gooo!!! <br />
             CDnet2014_dataset/
                       baseline/
                            highway
-                          pedestrians
+                           pedestrians
                            ...
                       badWeather/
                            skating
@@ -76,5 +77,5 @@ Compute metrics using [CDnet Utilities](http://wordpress-jodoin.dmi.usherb.ca/co
 For research purpose only. For commercial license, please contact the authors.
 
 ## Contact
-lim.longang at gmail.com
+lim.longang at gmail.com <br/>
 Any issues/discussions are welcome.
