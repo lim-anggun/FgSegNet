@@ -2,8 +2,8 @@
 
 This repository contains source codes and training set for the following paper:<br /><br />
 ***["Foreground Segmentation Using a Triplet Convolutional Neural Network for Multiscale Feature Encoding"](https://arxiv.org/abs/1801.02225)  by Long Ang LIM, Hacer YALIM KELES*** <br /><br />
-***Arxiv URL : https://arxiv.org/abs/1801.02225*** <br/><br/>
-![alt tag](network.png "FgSegNet Network Architecture")
+***Paper Link : https://arxiv.org/abs/1801.02225*** <br/><br/>
+![alt tag](network.jpg "FgSegNet Network Architecture")
 <br/>
 ## Citation
 If you find FgSegNet useful in your research, please consider citing: <br />
