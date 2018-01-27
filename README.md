@@ -24,12 +24,12 @@ This work was implemented with the following frameworks:
 
 ## Usage
 Easy to train! Just a SINGLE click, gooo!!! <br />
-1. Modify the following codes:
-    * ``<Keras DIR>\layers\convolutional.py``
-    * ``<Keras DIR>\backend\tensorflow_backend.py``
-    * ``<Keras DIR>\keras\losses.py``
-    * ``<Keras DIR>\metrics.py``
-    * ``<PYTHON 3.6>\site-packages\skimage\transform\pyramids.py`` <br/>
+1. Modify the following files in ``your installed dir`` with the files in ``utils dir``:
+    * ``<Your Keras DIR>\layers\convolutional.py``
+    * ``<Your Keras DIR>\backend\tensorflow_backend.py``
+    * ``<Your Keras DIR>\keras\losses.py``
+    * ``<Your Keras DIR>\metrics.py``
+    * ``<Your PYTHON 3.6>\site-packages\skimage\transform\pyramids.py`` <br/>
           replace <br/>
           ```out_rows = math.ceil(rows / float(downscale))``` <br/>
           ```out_cols = math.ceil(cols / float(downscale))``` <br/>
@@ -37,7 +37,7 @@ Easy to train! Just a SINGLE click, gooo!!! <br />
           ```out_rows = math.floor(rows / float(downscale))```<br/>
           ```out_cols = math.floor(cols / float(downscale))```
 2. Download VGG16 weights from [HERE](https://github.com/fchollet/deep-learning-models/releases/download/v0.1/vgg16_weights_tf_dim_ordering_tf_kernels_notop.h5) and place it in appropriate directory (e.g. FgSegNet dir), or it will be downloaded and stored in /.keras/models/ automatically.
-3. Download our training frames from [HRER](/FgSegNet_dataset2014) and [CDnet2014 dataset](http://changedetection.net), then place them into corresponding directory.<br/>
+3. Download our train+val frames from [HRER](/FgSegNet_dataset2014) and [CDnet2014 dataset](http://changedetection.net), then place them into corresponding directory.<br/>
   
     Example:
 
@@ -67,12 +67,12 @@ Easy to train! Just a SINGLE click, gooo!!! <br />
     ```
 
 ## Evaluation
-We perform two separated evaluations: <br />
-1. We compute our results locally
-2. We upload our results to [Change Detection 2014 Challenge](http://changedetection.net).<br />
-(Please refer to the paper for details)<br />
+We perform two separated evaluations and report our results on two test splits (``test dev`` & ``test challenge``): <br />
+1. We compute our results locally. (on ``test dev`` dataset)
+2. We upload our results to [Change Detection 2014 Challenge](http://changedetection.net). (on ``test challenge`` dataset where ground truth values are not shared with the public dataset)<br />
+(Both results are reported in our paper. Please refer to it for details)<br />
 
-Compute metrics using [CDnet Utilities](http://wordpress-jodoin.dmi.usherb.ca/code/)
+Compute metrics locally using [CDnet Utilities](http://wordpress-jodoin.dmi.usherb.ca/code/)
 ## License
 For research purpose only. For commercial license, please contact the authors.
 
