@@ -43,7 +43,9 @@ Easy to train! Just a SINGLE click, gooo!!! <br />
 
     ```
       FgSegNet/
-           FgSegNet_dataset/
+           FgSegNet/FgSegNet.py
+                   /FgSegNetModule.py
+           FgSegNet_dataset2014/
                      baseline/
                           highway50
                           highway200
@@ -73,6 +75,10 @@ We perform two separated evaluations and report our results on two test splits (
 (Both results are reported in our paper. Please refer to it for details)<br />
 
 Compute metrics locally using [CDnet Utilities](http://wordpress-jodoin.dmi.usherb.ca/code/)
+#### Note: 
+- ``test dev``: by considering only the range of the frames that contain the ground truth labels by excluding training frames (50 or 200 frames)
+- ``test challenge``: dataset on the server side (http://changedetection.net)
+
 ## License
 For research purpose only. For commercial license, please contact the authors.
 
