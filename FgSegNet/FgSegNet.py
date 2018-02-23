@@ -174,16 +174,29 @@ epoch = 60 if num_frames==50 else 50 # 50f->60epochs, 200f->50epochs
 batch_size = 1
 # =============================================================================
 
+# Example: (free to modify)
+
+# FgSegNet/FgSegNet/FgSegNet.py
+# FgSegNet/FgSegNet/FgSegNetModule.py
+# FgSegNet/FgSegNet_dataset2014/...
+# FgSegNet/CDnet2014_dataset/...
+# FgSegNet/models/...
+# FgSegNet/logs/...
+
+
 main_dir = 'FgSegNet'
-main_mdl_dir = os.path.join(main_dir,'model', 'f' + str(num_frames))
+
+main_mdl_dir = os.path.join(main_dir,'models', 'f' + str(num_frames))
 main_log_dir = os.path.join(main_dir,'logs', 'f' + str(num_frames))
-vgg_weights_path = os.path.join(main_dir, 'kvgg16_weights_tf_dim_ordering_tf_kernels_notop.h5')
+vgg_weights_path = os.path.join(main_dir, 'vgg16_weights_tf_dim_ordering_tf_kernels_notop.h5')
 if not os.path.exists(vgg_weights_path):
+    # keras func
     WEIGHTS_PATH_NO_TOP = 'https://github.com/fchollet/deep-learning-models/releases/download/v0.1/vgg16_weights_tf_dim_ordering_tf_kernels_notop.h5'
     vgg_weights_path = get_file('vgg16_weights_tf_dim_ordering_tf_kernels_notop.h5',
                                 WEIGHTS_PATH_NO_TOP,
                                 cache_subdir='models',
                                 file_hash='6d6bbae143d832006294945121d1f1fc')
+
 for category, scene_list in dataset.items():
     
     mdl_dir = os.path.join(main_mdl_dir, category)
@@ -197,8 +210,10 @@ for category, scene_list in dataset.items():
     for scene in scene_list:
         print ('Training ->>> ' + category + ' / ' + scene)
         
-        train_dir = os.path.join(main_dir, 'FgSegNet_dataset2014', category, scene + str(num_frames))
-        dataset_dir = os.path.join(main_dir, 'CDnet2014_dataset', category, scene)
+        # training frame path and dataset2014 path
+        # '..' up dir 1 level 
+        train_dir = os.path.join('..', 'FgSegNet_dataset2014', category, scene + str(num_frames))
+        dataset_dir = os.path.join('..', 'CDnet2014_dataset', category, scene)
             
         mdl_path = os.path.join(mdl_dir, 'mdl_' + scene + '.h5')
 
