@@ -143,7 +143,7 @@ def train(results, scene, mdl_path, log_dir, vgg_weights_path):
     model = model.initModel()
     
     tb = keras.callbacks.TensorBoard(log_dir=log_dir, histogram_freq=0, batch_size=batch_size, write_graph=False, write_grads=True, write_images=True, embeddings_freq=0, embeddings_layer_names=None, embeddings_metadata=None)
-    chk = keras.callbacks.ModelCheckpoint(mdl_path, monitor='val_loss', verbose=0, save_best_only=True, save_weights_only=True, mode='auto', period=1)
+    chk = keras.callbacks.ModelCheckpoint(mdl_path, monitor='val_loss', verbose=0, save_best_only=True, save_weights_only=False, mode='auto', period=1)
     redu = keras.callbacks.ReduceLROnPlateau(monitor='val_loss', factor=reduce_factor, patience=num_patience, verbose=1, mode='auto', epsilon=0.0001, cooldown=0, min_lr=0)
     model.fit([results[0], results[1], results[2]], results[3], validation_split=0.2, epochs=epoch, batch_size=batch_size, 
                        callbacks=[redu, chk, tb], verbose=1, class_weight=results[4], shuffle = True)
