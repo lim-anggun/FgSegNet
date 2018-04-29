@@ -112,8 +112,8 @@ def generateData(train_dir, dataset_dir, scene):
     scale3 = []
     for i in range(0, scale1.shape[0]):
        pyramid = tuple(pyramid_gaussian(scale1[i]/255., max_layer=2, downscale=2))
-       scale2.append(pyramid[1]) # 2nd scale
-       scale3.append(pyramid[2]) # 3rd scale
+       scale2.append(pyramid[1]*255.) # 2nd scale
+       scale3.append(pyramid[2]*255.) # 3rd scale
        del pyramid
     scale2 = np.asarray(scale2)
     scale3 = np.asarray(scale3)
