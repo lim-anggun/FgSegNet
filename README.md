@@ -2,14 +2,14 @@
 
 This repository contains source codes and training sets for the following paper:<br /><br />
 ***["Foreground Segmentation Using Convolutional Neural Networks for Multiscale Feature Encoding"](https://www.sciencedirect.com/science/article/pii/S0167865518303702) by Long Ang LIM and Hacer YALIM KELES*** <br /><br />
-
 The preprint version of the above paper is available at: https://arxiv.org/abs/1801.02225 <br/><br/>
 
-![alt tag](network.png "FgSegNet_M_S Network Architecture")
-
+![alt tag](network.jpg "FgSegNet_M_S Network Architecture")
 <br/>
+
 ## Citation
 If you find FgSegNet useful in your research, please consider citing: <br />
+
 ```
 @article{LIM2018,
   title = "Foreground Segmentation Using Convolutional Neural Networks for Multiscale Feature Encoding",
