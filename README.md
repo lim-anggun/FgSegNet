@@ -11,15 +11,17 @@ The preprint version of the above paper is available at: https://arxiv.org/abs/1
 If you find FgSegNet useful in your research, please consider citing: <br />
 
 ```
-@article{LIM2018,
-  title = "Foreground Segmentation Using Convolutional Neural Networks for Multiscale Feature Encoding",
-  journal = "Pattern Recognition Letters",
-  year = "2018",
-  issn = "0167-8655",
-  doi = "https://doi.org/10.1016/j.patrec.2018.08.002",
-  url = "http://www.sciencedirect.com/science/article/pii/S0167865518303702",
-  author = "Long Ang Lim and Hacer Yalim Keles",
-  keywords = "Foreground segmentation, Background subtraction, Deep learning, Convolutional neural networks, Video surveillance, Pixel classification"
+@article{LIM2018256,
+        title = "Foreground segmentation using convolutional neural networks for multiscale feature encoding",
+        journal = "Pattern Recognition Letters",
+        volume = "112",
+        pages = "256 - 262",
+        year = "2018",
+        issn = "0167-8655",
+        doi = "https://doi.org/10.1016/j.patrec.2018.08.002",
+        url = "http://www.sciencedirect.com/science/article/pii/S0167865518303702",
+        author = "Long Ang Lim and Hacer Yalim Keles",
+        keywords = "Foreground segmentation, Background subtraction, Deep learning, Convolutional neural networks, Video surveillance, Pixel classification"
 }
 ```
 
