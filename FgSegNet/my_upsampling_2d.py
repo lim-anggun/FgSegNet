@@ -10,7 +10,12 @@ from keras import backend as K
 from keras.engine.topology import Layer
 from keras.utils import conv_utils
 from keras.legacy import interfaces
-from keras.engine.base_layer import InputSpec
+
+# version 2.1.x has now base_layer class, so we need to import
+if keras.__version__<'2.2':
+    from keras.engine.topology import InputSpec
+else:
+    from keras.engine.base_layer import InputSpec
 
 import tensorflow as tf
 import numpy as np
