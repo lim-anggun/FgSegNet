@@ -97,7 +97,8 @@ We perform two separated evaluations and report our results on two test splits (
 2. We upload our results to [Change Detection 2014 Challenge](http://changedetection.net). (on ```test challenge``` dataset where ground truth values are not shared with the public dataset)<br />
 (Both results are reported in our paper. Please refer to it for details)<br />
 
-Compute metrics locally using [CDnet Utilities](http://wordpress-jodoin.dmi.usherb.ca/code/)
+Compute metrics locally using changedetection.net > UTILITIES tab.
+
 #### Note:
 - ```test dev```: by considering only the range of the frames that contain the ground truth labels by excluding training frames (50 or 200 frames)
 - ```test challenge```: dataset on the server side (http://changedetection.net)
