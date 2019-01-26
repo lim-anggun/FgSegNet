@@ -48,8 +48,8 @@ if keras.__version__!= '2.0.6' or tf.__version__!='1.1.0' or sys.version_info[0]
 def getData(train_dir, dataset_dir, scene, method_name):
     assert method_name in ['FgSegNet_M', 'FgSegNet_S'], 'method_name is incorrect'
     
-    Y_list = sorted(glob.glob(os.path.join(train_dir,'*.png')))
-    X_list = sorted(glob.glob(os.path.join(dataset_dir, 'in', '*.jpg')))
+    Y_list = glob.glob(os.path.join(train_dir,'*.png'))
+    X_list = glob.glob(os.path.join(dataset_dir, 'in', '*.jpg'))
 
     if len(Y_list)<=0 or len(X_list)<=0:
         raise ValueError('System cannot find the dataset path or ground-truth path. Please give the correct path.')
@@ -72,6 +72,10 @@ def getData(train_dir, dataset_dir, scene, method_name):
     
     if len(X_list)!=len(Y_list):
         raise ValueError('The number of X_list and Y_list must be equal.')
+    
+    # X must be corresponded to Y
+    X_list = sorted(X_list)
+    Y_list = sorted(Y_list)
     
     # process training images
     X = []

@@ -55,9 +55,8 @@ def generateData(train_dir, dataset_dir, scene, method_name):
     # training frames end with '*.jpg'
     
     # given ground-truths, load inputs  
-    # X_list & Y_list may not match depends on OS, so we need to sort
-    Y_list = sorted(glob.glob(os.path.join(train_dir, '*.png'))) 
-    X_list= sorted(glob.glob(os.path.join(dataset_dir, 'input','*.jpg')))
+    Y_list = glob.glob(os.path.join(train_dir, '*.png'))
+    X_list= glob.glob(os.path.join(dataset_dir, 'input','*.jpg'))
 
 
     if len(Y_list)<=0 or len(X_list)<=0:
@@ -81,6 +80,10 @@ def generateData(train_dir, dataset_dir, scene, method_name):
     if len(X_list)!=len(Y_list):
         raise ValueError('The number of X_list and Y_list must be equal.')
         
+    # X must be corresponded to Y
+    X_list = sorted(X_list)
+    Y_list = sorted(Y_list)
+
     # load training data
     X = []
     Y = []
