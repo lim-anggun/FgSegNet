@@ -55,9 +55,11 @@ def generateData(train_dir, dataset_dir, scene, method_name):
     # training frames end with '*.jpg'
     
     # given ground-truths, load inputs  
-    Y_list = glob.glob(os.path.join(train_dir, '*.png'))
-    X_list= glob.glob(os.path.join(dataset_dir, 'input','*.jpg'))
-    
+    # X_list & Y_list may not match depends on OS, so we need to sort
+    Y_list = sorted(glob.glob(os.path.join(train_dir, '*.png'))) 
+    X_list= sorted(glob.glob(os.path.join(dataset_dir, 'input','*.jpg')))
+
+
     if len(Y_list)<=0 or len(X_list)<=0:
         raise ValueError('System cannot find the dataset path or ground-truth path. Please give the correct path.')
         
